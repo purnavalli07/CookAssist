@@ -1,0 +1,117 @@
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  /* Color palette — warm dark kitchen aesthetic */
+  --bg: #0f0e0c;
+  --surface-1: #1a1815;
+  --surface-2: #221f1b;
+  --surface-3: #2c2924;
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* Text */
+  --text-primary: #f0ede8;
+  --text-secondary: #b8b0a6;
+  --text-muted: #756d64;
+
+  /* Accent - warm amber/saffron */
+  --accent: #d97b2e;
+  --accent-dark: #b86320;
+  --accent-rgb: 217, 123, 46;
+
+  /* Semantic */
+  --color-success: #4caf82;
+  --color-warn: #e8a93a;
+  --color-error: #e05a5a;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+
+  /* Spacing */
+  --radius: 12px;
+}
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+}
+
+/* ─── Utility ───────────────────────────────────────────── */
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--surface-3);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ─── Selection ─────────────────────────────────────────── */
+::selection {
+  background: rgba(var(--accent-rgb), 0.25);
+  color: var(--text-primary);
+}
